@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe';
+import LandingPage from './LandingPage';
 import './App.css';
 
 const App =() => {
@@ -35,10 +36,20 @@ const App =() => {
 
   return (
     <div className="App">
-      <form className="search-form" onSubmit={getSearch}>
-        <input type="text" className="search-bar" value={search} onChange={updateSearch}/>
+      <header>
+        <h1>Recipe Book</h1>
+      </header>
+      <form className="search-form" role="search" onSubmit={getSearch}>
+        <label htmlFor="search-bar">
+          <span className="visually-hidden">Search</span>
+        </label>
+
+        <input type="text" id="search-bar" name="search-term" value={search} onChange={updateSearch}/>
+
         <button type="submit" className="search-button">Search</button>
       </form>
+      <main> 
+        {!recipes.length ? <p>empty</p> : <p>full</p>}
       {recipes.map(recipe => (
         <Recipe
           key={recipe.recipe.label} 
@@ -48,6 +59,7 @@ const App =() => {
           ingredients={recipe.recipe.ingredients}
         />
       ))}
+      </main>
     </div>
   );
 }

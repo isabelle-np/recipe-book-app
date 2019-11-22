@@ -1,18 +1,18 @@
 import React from 'react';
-import { link } from 'fs';
 
 const Recipe = ({title, calories, image, ingredients}) => {
     return(
-        <div>
-            <h1>{title}</h1>
+        <>
+            <h2>{title}</h2>
             <ol>
                 {ingredients.map((ingredient, i) => (
-                    <li>{ingredient.text}</li>
+                    <li key={i}>{ingredient.text}</li>
                 ))}
             </ol>
             <p>{calories}</p>
-            <img src={image}/>
-        </div>
+            {/* img tag has no alt attribute because the image is within the content and context*/}
+            <img src={image} alt=""/>
+        </>
     );
 }
 
