@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe';
 import LandingPage from './LandingPage';
+import Header from './Header';
 import './App.css';
+import styled from 'styled-components';
 
 const App =() => {
   const APP_ID = '8244022a';
@@ -36,6 +38,7 @@ const App =() => {
 
   return (
     <div className="App">
+      <Header/>
       <header>
         <h1>Recipe Book</h1>
       </header>
