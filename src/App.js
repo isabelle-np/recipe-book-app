@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import Recipe from './Recipe';
 import LandingPage from './LandingPage';
-import Header from './Header';
+import Header from './components/Header/Header';
 import './App.css';
 import styled from 'styled-components';
+import Hero from './components/Hero/Hero';
+import Footer from './components/Footer/Footer';
 
 const App =() => {
   const APP_ID = '8244022a';
@@ -39,9 +41,7 @@ const App =() => {
   return (
     <div className="App">
       <Header/>
-      <header>
-        <h1>Recipe Book</h1>
-      </header>
+      <Hero/>
       <form className="search-form" role="search" onSubmit={getSearch}>
         <label htmlFor="search-bar">
           <span className="visually-hidden">Search</span>
@@ -63,6 +63,8 @@ const App =() => {
         />
       ))}
       </main>
+      <Footer/>
+
     </div>
   );
 }
