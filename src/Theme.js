@@ -5,6 +5,7 @@ export const BLACK = "#000000";
 export const GREY = "#414141";
 export const CHARCOAL = "#343434";
 export const WHITE = "#ffffff";
+export const YELLOW = "#fecf70";
 
 export default {
 
